@@ -8,7 +8,7 @@ const routes: Routes = [
   { path: '', component: ChamadoComponent},
   { path: 'novo', component: NovoChamadoComponent },
   { 
-    path: 'edit/:id', 
+    path: 'detail/:id', 
     component: NovoChamadoComponent,
     resolve: {chamado: NovoChamadoResolver}
   }

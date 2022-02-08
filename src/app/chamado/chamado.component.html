@@ -43,7 +43,7 @@
                                     <tbody>
                                         <tr *ngFor=" let chamado of chamados">
                                             <td>
-                                                <u><a [routerLink]="['edit', chamado.id]">{{chamado.id}}</a></u>
+                                                <u><a [routerLink]="['detail', chamado.id]">{{chamado.id}}</a></u>
                                             </td>
                                             <td>{{chamado.titulo}}</td>
                                             <td class="td-actions text-right">
