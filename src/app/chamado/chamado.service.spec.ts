@@ -1,16 +1,16 @@
 /* tslint:disable:no-unused-variable */
 
 import { TestBed, async, inject } from '@angular/core/testing';
-import { NovoChamadoService } from './novo-chamado.service';
+import { ChamadoService } from './chamado.service';
 
 describe('Service: NovoChamado', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
-      providers: [NovoChamadoService]
+      providers: [ChamadoService]
     });
   });
 
-  it('should ...', inject([NovoChamadoService], (service: NovoChamadoService) => {
+  it('should ...', inject([ChamadoService], (service: ChamadoService) => {
     expect(service).toBeTruthy();
   }));
 });

@@ -1,10 +1,11 @@
-import { NovoChamadoService } from './novo-chamado.service';
-import { HttpClient } from '@angular/common/http';
+import { Chamado } from 'app/shared/model/chamado';
+import { ChamadoService } from '../chamado.service';
 import { FormControl } from '@angular/forms';
 import { FormGroup } from '@angular/forms';
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
-import { Chamado } from './../../shared/model/chamado';
+import { ActivatedRoute } from '@angular/router';
+import { catchError, tap } from 'rxjs/operators';
 
 @Component({
   selector: 'app-novo-chamado',
@@ -13,16 +14,24 @@ import { Chamado } from './../../shared/model/chamado';
 })
 export class NovoChamadoComponent implements OnInit {
 
+  @Input()
+  chamado?: Chamado;
   formChamado: FormGroup;
 
-  constructor(private chamadoService: NovoChamadoService) { }
+  constructor(private chamadoService: ChamadoService, private route: ActivatedRoute) { }
 
   ngOnInit() {
-    this.createForm(new Chamado())
-    this.chamadoService.list().subscribe() /// TODO: chamado => this.chamado = chamado; dentro do subscribe
+      const chamadoEdit = this.route.snapshot.data['chamado']
+      console.log(chamadoEdit)
+      if (chamadoEdit)
+        this.chamado = chamadoEdit;
+        
+      this.createForm(this.chamado);          
   }
 
   createForm(chamado: Chamado) {
+    console.log("chamado aqui")
+    console.log(chamado)
     this.formChamado = new FormGroup({
       titulo: new FormControl(chamado.titulo),
       descricao: new FormControl(chamado.descricao)

@@ -36,22 +36,18 @@
                         <div class="tab-content">
                             <div class="tab-pane active" id="profile">
                                 <table class="table">
+                                    <thead class="text-primary">
+                                        <th>Código</th>
+                                        <th>Descrição</th>
+                                    </thead>
                                     <tbody>
-                                        <tr>
+                                        <tr *ngFor=" let chamado of chamados">
                                             <td>
-                                                <div class="form-check">
-                                                    <label class="form-check-label">
-                                                        <input class="form-check-input" type="checkbox" value=""
-                                                            checked>
-                                                        <span class="form-check-sign">
-                                                            <span class="check"></span>
-                                                        </span>
-                                                    </label>
-                                                </div>
+                                                <u><a [routerLink]="['edit', chamado.id]">{{chamado.id}}</a></u>
                                             </td>
-                                            <td>Sign contract for "What are conference organizers afraid of?"</td>
+                                            <td>{{chamado.titulo}}</td>
                                             <td class="td-actions text-right">
-                                                <button mat-raised-button type="button" matTooltip="Edit Task"
+                                                <!-- <button mat-raised-button type="button" matTooltip="Edit Task"
                                                     [matTooltipPosition]="'above'"
                                                     class="btn btn-primary btn-link btn-sm btn-just-icon">
                                                     <i class="material-icons">edit</i>
@@ -60,85 +56,7 @@
                                                     [matTooltipPosition]="'above'"
                                                     class="btn btn-danger btn-link btn-sm btn-just-icon">
                                                     <i class="material-icons">close</i>
-                                                </button>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>
-                                                <div class="form-check">
-                                                    <label class="form-check-label">
-                                                        <input class="form-check-input" type="checkbox" value="">
-                                                        <span class="form-check-sign">
-                                                            <span class="check"></span>
-                                                        </span>
-                                                    </label>
-                                                </div>
-                                            </td>
-                                            <td>Lines From Great Russian Literature? Or E-mails From My Boss?</td>
-                                            <td class="td-actions text-right">
-                                                <button mat-raised-button type="button" matTooltip="Edit Task"
-                                                    [matTooltipPosition]="'above'"
-                                                    class="btn btn-primary btn-link btn-sm btn-just-icon">
-                                                    <i class="material-icons">edit</i>
-                                                </button>
-                                                <button mat-raised-button type="button" matTooltip="Remove"
-                                                    [matTooltipPosition]="'above'"
-                                                    class="btn btn-danger btn-link btn-sm btn-just-icon">
-                                                    <i class="material-icons">close</i>
-                                                </button>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>
-                                                <div class="form-check">
-                                                    <label class="form-check-label">
-                                                        <input class="form-check-input" type="checkbox" value="">
-                                                        <span class="form-check-sign">
-                                                            <span class="check"></span>
-                                                        </span>
-                                                    </label>
-                                                </div>
-                                            </td>
-                                            <td>Flooded: One year later, assessing what was lost and what was found when
-                                                a ravaging rain swept through metro Detroit
-                                            </td>
-                                            <td class="td-actions text-right">
-                                                <button mat-raised-button type="button" matTooltip="Edit Task"
-                                                    [matTooltipPosition]="'above'"
-                                                    class="btn btn-primary btn-link btn-sm btn-just-icon">
-                                                    <i class="material-icons">edit</i>
-                                                </button>
-                                                <button mat-raised-button type="button" matTooltip="Remove"
-                                                    [matTooltipPosition]="'above'"
-                                                    class="btn btn-danger btn-link btn-sm btn-just-icon">
-                                                    <i class="material-icons">close</i>
-                                                </button>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>
-                                                <div class="form-check">
-                                                    <label class="form-check-label">
-                                                        <input class="form-check-input" type="checkbox" value=""
-                                                            checked>
-                                                        <span class="form-check-sign">
-                                                            <span class="check"></span>
-                                                        </span>
-                                                    </label>
-                                                </div>
-                                            </td>
-                                            <td>Create 4 Invisible User Experiences you Never Knew About</td>
-                                            <td class="td-actions text-right">
-                                                <button mat-raised-button type="button" matTooltip="Edit Task"
-                                                    [matTooltipPosition]="'above'"
-                                                    class="btn btn-primary btn-link btn-sm btn-just-icon">
-                                                    <i class="material-icons">edit</i>
-                                                </button>
-                                                <button mat-raised-button type="button" matTooltip="Remove"
-                                                    [matTooltipPosition]="'above'"
-                                                    class="btn btn-danger btn-link btn-sm btn-just-icon">
-                                                    <i class="material-icons">close</i>
-                                                </button>
+                                                </button> -->
                                             </td>
                                         </tr>
                                     </tbody>
@@ -149,15 +67,7 @@
                                     <tbody>
                                         <tr>
                                             <td>
-                                                <div class="form-check">
-                                                    <label class="form-check-label">
-                                                        <input class="form-check-input" type="checkbox" value=""
-                                                            checked>
-                                                        <span class="form-check-sign">
-                                                            <span class="check"></span>
-                                                        </span>
-                                                    </label>
-                                                </div>
+                                                <!-- TODO remove TD -->
                                             </td>
                                             <td>Flooded: One year later, assessing what was lost and what was found when
                                                 a ravaging rain swept through metro Detroit
@@ -177,14 +87,7 @@
                                         </tr>
                                         <tr>
                                             <td>
-                                                <div class="form-check">
-                                                    <label class="form-check-label">
-                                                        <input class="form-check-input" type="checkbox" value="">
-                                                        <span class="form-check-sign">
-                                                            <span class="check"></span>
-                                                        </span>
-                                                    </label>
-                                                </div>
+                                                <!-- TODO remove TD -->
                                             </td>
                                             <td>Sign contract for "What are conference organizers afraid of?"</td>
                                             <td class="td-actions text-right">
@@ -208,14 +111,7 @@
                                     <tbody>
                                         <tr>
                                             <td>
-                                                <div class="form-check">
-                                                    <label class="form-check-label">
-                                                        <input class="form-check-input" type="checkbox" value="">
-                                                        <span class="form-check-sign">
-                                                            <span class="check"></span>
-                                                        </span>
-                                                    </label>
-                                                </div>
+                                                <!-- TODO remove TD -->
                                             </td>
                                             <td>Lines From Great Russian Literature? Or E-mails From My Boss?</td>
                                             <td class="td-actions text-right">
@@ -233,15 +129,7 @@
                                         </tr>
                                         <tr>
                                             <td>
-                                                <div class="form-check">
-                                                    <label class="form-check-label">
-                                                        <input class="form-check-input" type="checkbox" value=""
-                                                            checked>
-                                                        <span class="form-check-sign">
-                                                            <span class="check"></span>
-                                                        </span>
-                                                    </label>
-                                                </div>
+                                                <!-- TODO remove TD -->
                                             </td>
                                             <td>Flooded: One year later, assessing what was lost and what was found when
                                                 a ravaging rain swept through metro Detroit
@@ -261,15 +149,7 @@
                                         </tr>
                                         <tr>
                                             <td>
-                                                <div class="form-check">
-                                                    <label class="form-check-label">
-                                                        <input class="form-check-input" type="checkbox" value=""
-                                                            checked>
-                                                        <span class="form-check-sign">
-                                                            <span class="check"></span>
-                                                        </span>
-                                                    </label>
-                                                </div>
+                                                <!-- TODO remove TD -->
                                             </td>
                                             <td>Sign contract for "What are conference organizers afraid of?"</td>
                                             <td class="td-actions text-right">
